@@ -47,7 +47,16 @@ return {
                     text = 'Idle',
                     tooltip = '💤'
                 },
-                buttons = {{label = 'View Repository', url = 'https://github.com/vyfor/cord.nvim'}}
+                buttons = {
+                    {
+                        label = function(opts)
+                            return opts.repo_url and 'View Repository' or 'View Profile'
+                        end,
+                        url = function(opts)
+                            return opts.repo_url or 'https://github.com/DexulDev?tab=repositories'
+                        end,
+                    }
+                }
             })
         end
     }, {
