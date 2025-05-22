@@ -22,7 +22,7 @@ mason_lspconfig.setup({
 })
 
 -- Configuración manual de servidores
-local servers = { "lua_ls", "pyright", "ts_ls" } -- Cambiado de tsserver a ts_ls
+local servers = { "lua_ls", "pyright", "ts_ls" }
 
 for _, server in ipairs(servers) do
     lspconfig[server].setup({
@@ -30,3 +30,25 @@ for _, server in ipairs(servers) do
         capabilities = capabilities
     })
 end
+
+-- Keep your specific configuration
+lspconfig.intelephense.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    intelephense = {
+      stubs = {
+        "bcmath", "bz2", "calendar", "Core", "curl", "date", 
+        "dba", "dom", "fileinfo", "filter", "ftp", "gd", "gettext", 
+        "hash", "iconv", "imap", "intl", "json", "libxml", "mbstring", 
+        "mcrypt", "mysql", "mysqli", "password", "pcntl", "pcre", "PDO", 
+        "pdo_mysql", "Phar", "readline", "regex", "session", "SimpleXML", 
+        "sockets", "sodium", "standard", "superglobals", "tokenizer", 
+        "xml", "xmlreader", "xmlwriter", "zip", "zlib"
+      },
+      files = {
+        maxSize = 5000000
+      }
+    }
+  }
+}
