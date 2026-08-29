@@ -3,7 +3,7 @@ require("config.keymaps")
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 
--- Editor
+-- cosas del editor
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.formatoptions:remove({ "c", "r", "o" })
@@ -18,18 +18,18 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 
--- Search
+-- cosas de search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
--- UI
+-- cosos de UI
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 vim.opt.laststatus = 3
 
--- Editing
+-- cosos de Editing
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
