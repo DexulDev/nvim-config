@@ -3,7 +3,7 @@ require("config.keymaps")
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 
--- cosas del editor
+-- Editor
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.formatoptions:remove({ "c", "r", "o" })
@@ -18,18 +18,29 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 
--- cosas de search
+-- Search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
--- cosos de UI
+-- UI
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 vim.opt.laststatus = 3
 
--- cosos de Editing
+-- Editing
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
+
+-- para Java jeje
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    vim.opt_local.tabstop = 6
+    vim.opt_local.shiftwidth = 6
+    vim.opt_local.softtabstop = 6
+  end,
+})
